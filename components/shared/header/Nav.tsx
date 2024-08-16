@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import { Container } from '@/components/Container';
+import { Filter, SlidersHorizontal } from 'lucide-react';
 
 const menuItems = [
   "Profile",
@@ -31,15 +32,11 @@ const Nav = () => {
           <NavbarMenuToggle aria-label={isMenuOpen ? "X" : "Open menu"} />
         </NavbarContent>
 
-        {/* <NavbarContent className="sm:hidden pr-3" justify="center">
-          <NavbarBrand>
-            <p className="font-bold text-inherit">MerchantOF</p>
-          </NavbarBrand>
-        </NavbarContent> */}
 
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarBrand>
-            <p className="font-bold text-inherit">MerchantOF</p>
+            <SlidersHorizontal/>
+            <p className="font-bold text-inherit">Categories</p>
           </NavbarBrand>
           <NavbarItem>
             <Link color="foreground" href="#">
