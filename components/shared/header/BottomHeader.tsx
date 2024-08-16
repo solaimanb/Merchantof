@@ -1,8 +1,10 @@
-import React from 'react'
+import { Container } from '@/components/Container'
 
 const BottomHeader = () => {
   return (
-    <div>BottomHeader</div>
+    <Container>
+      <div>BottomHeader</div>
+    </Container>
   )
 }
 
