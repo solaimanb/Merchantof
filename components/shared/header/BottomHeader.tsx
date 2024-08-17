@@ -16,7 +16,7 @@ const BottomHeader = () => {
 
   return (
     <Container>
-      <div className='mt-6'>
+      <div className='mt-6 hidden lg:block'>
         <nav>
           <ul className='flex items-center justify-between gap-4 text-sm'>
             {categories.map((category, index) => (

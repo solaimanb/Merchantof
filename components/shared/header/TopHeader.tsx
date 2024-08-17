@@ -1,45 +1,77 @@
-import { Container } from "@/components/Container";
-import SearchBar from "@/components/SearchBar";
-import { Facebook, Instagram, MessageCircleIcon } from "lucide-react";
-import Link from "next/link";
+import { Container } from '@/components/Container';
+import SearchBar from '@/components/SearchBar';
+import { Button, NavbarContent, NavbarItem } from '@nextui-org/react';
+import {
+  Facebook,
+  Instagram,
+  Menu,
+  MessageCircleIcon,
+  ShoppingCart,
+  User,
+} from 'lucide-react';
+import Link from 'next/link';
 
 const TopHeader = () => {
   return (
-    <Container>
-      <section className="flex justify-between items-center py-4">
-        <div>
-          <Link href="/" className="font-bold text-2xl">
-            MerchantOF
-          </Link>
-        </div>
+    <Container className="flex items-center justify-between py-4">
+      <NavbarContent className="lg:hidden w-fit" justify="start">
+        {/* <NavbarMenuToggle /> */}
+        <Menu />
+      </NavbarContent>
 
-        <div>
-          <SearchBar />
-        </div>
+      <NavbarContent>
+        <Link href="/" className="font-bold text-2xl">
+          MerchantOF
+        </Link>
+      </NavbarContent>
 
-        <div>
-          <nav className="text-sm">
-            <ul className="flex items-center gap-6 lg:gap-8">
-              <li>About us</li>
-              <li>Blog</li>
-              <li>Contact us</li>
-              <li>Help & Support</li>
-            </ul>
-          </nav>
-        </div>
+      <NavbarContent className="hidden lg:block">
+        <SearchBar />
+      </NavbarContent>
 
-        <div className="flex items-center gap-4">
-          <Link href="/">
-            <Instagram size={18} />
-          </Link>
-          <Link href="/">
-            <Facebook size={18} />
-          </Link>
-          <Link href="/">
-            <MessageCircleIcon size={18} />
-          </Link>
-        </div>
-      </section>
+      <NavbarContent className="hidden lg:block">
+        <nav className="text-sm">
+          <ul className="flex items-center gap-6 lg:gap-8">
+            <li className="text-nowrap">About us</li>
+            <li className="text-nowrap">Blog</li>
+            <li className="text-nowrap">Contact us</li>
+            <li className="text-nowrap">Help & Support</li>
+          </ul>
+        </nav>
+      </NavbarContent>
+
+      <NavbarContent className="hidden lg:flex items-center gap-4">
+        <Link href="/">
+          <Instagram size={18} />
+        </Link>
+        <Link href="/">
+          <Facebook size={18} />
+        </Link>
+        <Link href="/">
+          <MessageCircleIcon size={18} />
+        </Link>
+      </NavbarContent>
+
+      <NavbarContent justify="end" className="flex lg:hidden items-center">
+        <NavbarItem>
+          <Button
+            // as={Link}
+            href="/"
+            variant="ghost"
+          >
+            <User size={20} />
+          </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <Button
+            // as={Link}
+            href="/"
+            variant="ghost"
+          >
+            <ShoppingCart size={20} />
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
     </Container>
   );
 };

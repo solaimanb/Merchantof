@@ -1,18 +1,22 @@
 'use client';
 
-import React from "react";
-import TopHeader from "./TopHeader";
-import BottomHeader from "./BottomHeader";
-import Nav from "./Nav";
+import { Navbar } from '@nextui-org/react';
+import React from 'react';
+import BottomHeader from './BottomHeader';
+import Nav from './Nav';
+import TopHeader from './TopHeader';
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
-    <>
-     <TopHeader/>
-     <Nav/>
-     <BottomHeader/>
-    </>
-  )
-}
+    <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+      <div className="flex flex-col w-full">
+        <TopHeader />
+        <Nav />
+        <BottomHeader />
+      </div>
+    </Navbar>
+  );
+};
 
-export default Header
+export default Header;
