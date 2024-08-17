@@ -1,14 +1,12 @@
-import { Container } from '@/components/Container'
-import React from 'react'
+import { Container } from '@/components/Container';
+import Hero from '@/components/Hero';
 
 const Home = () => {
   return (
     <Container>
-      <section>
-      Home
-      </section>
+      <Hero />
     </Container>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
