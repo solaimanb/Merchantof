@@ -7,11 +7,11 @@ import Nav from "./Nav";
 
 const Header = () => {
   return (
-    <div className="">
+    <>
      <TopHeader/>
      <Nav/>
      <BottomHeader/>
-    </div>
+    </>
   )
 }
 
