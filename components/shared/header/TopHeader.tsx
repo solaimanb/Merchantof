@@ -1,9 +1,10 @@
 import { Container } from '@/components/Container';
 import SearchBar from '@/components/SearchBar';
-import { NavbarContent, NavbarItem, NavbarMenuToggle } from '@nextui-org/react';
+import { Button, NavbarContent, NavbarItem } from '@nextui-org/react';
 import {
   Facebook,
   Instagram,
+  Menu,
   MessageCircleIcon,
   ShoppingCart,
   User,
@@ -12,52 +13,63 @@ import Link from 'next/link';
 
 const TopHeader = () => {
   return (
-    <Container className="flex lg:block">
-      <NavbarContent className="lg:hidden border w-fit" justify="start">
-        <NavbarMenuToggle />
+    <Container className="flex items-center justify-between py-4">
+      <NavbarContent className="lg:hidden w-fit" justify="start">
+        {/* <NavbarMenuToggle /> */}
+        <Menu />
       </NavbarContent>
 
-      <NavbarContent className="flex justify-between items-center py-4">
-        <div>
-          <Link href="/" className="font-bold text-2xl">
-            MerchantOF
-          </Link>
-        </div>
-
-        <div className="hidden lg:block">
-          <SearchBar />
-        </div>
-
-        <div className="hidden lg:block">
-          <nav className="text-sm">
-            <ul className="flex items-center gap-6 lg:gap-8">
-              <li className="text-nowrap">About us</li>
-              <li className="text-nowrap">Blog</li>
-              <li className="text-nowrap">Contact us</li>
-              <li className="text-nowrap">Help & Support</li>
-            </ul>
-          </nav>
-        </div>
-
-        <div className="hidden lg:flex items-center gap-4">
-          <Link href="/">
-            <Instagram size={18} />
-          </Link>
-          <Link href="/">
-            <Facebook size={18} />
-          </Link>
-          <Link href="/">
-            <MessageCircleIcon size={18} />
-          </Link>
-        </div>
+      <NavbarContent>
+        <Link href="/" className="font-bold text-2xl">
+          MerchantOF
+        </Link>
       </NavbarContent>
 
-      <NavbarContent className="lg:hidden border" justify="end">
+      <NavbarContent className="hidden lg:block">
+        <SearchBar />
+      </NavbarContent>
+
+      <NavbarContent className="hidden lg:block">
+        <nav className="text-sm">
+          <ul className="flex items-center gap-6 lg:gap-8">
+            <li className="text-nowrap">About us</li>
+            <li className="text-nowrap">Blog</li>
+            <li className="text-nowrap">Contact us</li>
+            <li className="text-nowrap">Help & Support</li>
+          </ul>
+        </nav>
+      </NavbarContent>
+
+      <NavbarContent className="hidden lg:flex items-center gap-4">
+        <Link href="/">
+          <Instagram size={18} />
+        </Link>
+        <Link href="/">
+          <Facebook size={18} />
+        </Link>
+        <Link href="/">
+          <MessageCircleIcon size={18} />
+        </Link>
+      </NavbarContent>
+
+      <NavbarContent justify="end" className="flex lg:hidden items-center">
         <NavbarItem>
-          <User size={20} />
+          <Button
+            // as={Link}
+            href="/"
+            variant="ghost"
+          >
+            <User size={20} />
+          </Button>
         </NavbarItem>
         <NavbarItem>
-          <ShoppingCart size={20} />
+          <Button
+            // as={Link}
+            href="/"
+            variant="ghost"
+          >
+            <ShoppingCart size={20} />
+          </Button>
         </NavbarItem>
       </NavbarContent>
     </Container>

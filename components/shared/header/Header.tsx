@@ -10,7 +10,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
-      <div className="flex lg:flex-col w-full">
+      <div className="flex flex-col w-full">
         <TopHeader />
         <Nav />
         <BottomHeader />
