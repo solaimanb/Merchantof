@@ -3,10 +3,15 @@ import { Search } from 'lucide-react';
 
 const SearchBar = () => {
   return (
-    <div className="flex items-center justify-between border rounded-md p-1 gap-2">
-      <Input type="text" placeholder="Search Products" className="" />
-      <Button className="">
-        <Search size={20} />
+    <div className="rounded-md border p-1 flex items-center gap-2">
+      <Input
+        size="lg"
+        type="email"
+        className="focus:outline-none ring-0"
+        placeholder="Search Products"
+      />
+      <Button>
+        <Search />
       </Button>
     </div>
   );
