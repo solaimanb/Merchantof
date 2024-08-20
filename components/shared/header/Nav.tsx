@@ -1,7 +1,7 @@
 import { Container } from '@/components/Container';
+import SearchBar from '@/components/SearchBar';
 import {
   Button,
-  Divider,
   Link,
   NavbarBrand,
   NavbarContent,
@@ -11,13 +11,10 @@ import {
 } from '@nextui-org/react';
 import { ShoppingCart, SlidersHorizontal, User } from 'lucide-react';
 import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import { Autoplay } from 'swiper/modules';
 
 const menuItems = [
   'Profile',
@@ -84,39 +81,13 @@ const Nav = () => {
           </Dropdown> */}
         </NavbarContent>
 
-        <Divider className="my-4 bg-white" orientation="vertical" />
+        {/* <NavbarContent className="w-1/2 hidden lg:flex gap-4 " justify="center">
+          <NavbarItem className="w-full"></NavbarItem>
+        </NavbarContent> */}
 
-        <NavbarContent className="w-1/2 hidden lg:flex gap-4 " justify="center">
-          <NavbarItem className="w-full">
-            <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                delay: 15000,
-                disableOnInteraction: false,
-              }}
-              loop={true}
-              modules={[Autoplay]}
-              className="h-10 w-full"
-              direction="vertical"
-            >
-              <SwiperSlide className="h-4 bg-gray-400 flex items-center justify-center text-center">
-                Slide 1
-              </SwiperSlide>
-              <SwiperSlide className="h-4 bg-gray-400 flex items-center justify-center text-center">
-                Slide 2
-              </SwiperSlide>
-              <SwiperSlide className="h-4 bg-gray-400 flex items-center justify-center text-center">
-                Slide 3
-              </SwiperSlide>
-              <SwiperSlide className="h-4 bg-gray-400 flex items-center justify-center text-center">
-                Slide 4
-              </SwiperSlide>
-            </Swiper>
-          </NavbarItem>
+        <NavbarContent className="hidden lg:block">
+          <SearchBar />
         </NavbarContent>
-
-        <Divider className="my-4 bg-white" orientation="vertical" />
 
         <NavbarContent justify="end" className="flex items-center">
           <NavbarItem>

@@ -1,5 +1,4 @@
 import { Container } from '@/components/Container';
-import SearchBar from '@/components/SearchBar';
 import { Button, NavbarContent, NavbarItem } from '@nextui-org/react';
 import {
   Facebook,
@@ -25,22 +24,14 @@ const TopHeader = () => {
         </Link>
       </NavbarContent>
 
-      <NavbarContent className="hidden lg:block">
-        <SearchBar />
-      </NavbarContent>
-
-      <NavbarContent className="hidden lg:block">
+      <NavbarContent className="hidden lg:flex items-center gap-4">
         <nav className="text-sm">
           <ul className="flex items-center gap-6 lg:gap-8">
-            <li className="text-nowrap">About us</li>
-            <li className="text-nowrap">Blog</li>
             <li className="text-nowrap">Contact us</li>
             <li className="text-nowrap">Help & Support</li>
           </ul>
         </nav>
-      </NavbarContent>
 
-      <NavbarContent className="hidden lg:flex items-center gap-4">
         <Link href="/">
           <Instagram size={18} />
         </Link>
