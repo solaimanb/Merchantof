@@ -1,3 +1,5 @@
+import ClientThemeProvider from '@/providers/ClientThemeProvider';
+import { NextUIProvider } from '@nextui-org/react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Header from '../components/shared/header/Header';
@@ -19,8 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
+        <ClientThemeProvider>
+          <NextUIProvider>
+            <Header />
+            <main>{children}</main>
+          </NextUIProvider>
+        </ClientThemeProvider>
       </body>
     </html>
   );

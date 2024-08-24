@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardBody,
   CardFooter,
@@ -58,14 +57,14 @@ const products: ProductData[] = [
   },
 ];
 
-const RowPresetOne: React.FC = () => {
+const ProductPresetI: React.FC = () => {
   return (
     <section className="">
       <div className="mb-6">
         <h1 className="text-2xl font-bold">Flash Sale</h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((product) => (
           <Card key={product.id} className="p-2 border rounded-lg shadow">
             <CardHeader className="p-1 flex-col items-start">
@@ -88,29 +87,18 @@ const RowPresetOne: React.FC = () => {
             </CardBody>
 
             <CardFooter className="flex flex-col items-start p-1 space-y-2">
-              <div className="flex items-center mb-2">
-                {/* <Rating
-                  value={Math.round(product.rating)}
-                  size="small"
-                  readOnly
-                /> */}
-                <span className="text-sm text-gray-500">
-                  ({product.reviews} reviews)
-                </span>
-              </div>
-
               <div className="flex justify-between items-center w-full">
                 <p className="text-xl font-semibold text-orange-500">
                   {product.price}
                 </p>
-                <Button
+                {/* <Button
                   size="sm"
                   color="primary"
                   variant="flat"
                   className="text-sm"
                 >
                   Add to Cart
-                </Button>
+                </Button> */}
               </div>
             </CardFooter>
           </Card>
@@ -120,4 +108,4 @@ const RowPresetOne: React.FC = () => {
   );
 };
 
-export default RowPresetOne;
+export default ProductPresetI;
