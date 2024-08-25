@@ -49,7 +49,7 @@ const Hero = () => {
           key={slide.id}
           className="flex items-center justify-center"
         >
-          <div className="text-center h-[50vh]">
+          <div className="text-center h-[50vh] rounded-lg">
             <Image
               src={slide.imageUrl}
               alt={`Slide ${slide.id}`}
