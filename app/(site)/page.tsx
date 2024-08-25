@@ -1,4 +1,5 @@
 import SwiperBanner from '@/components/ads/SwiperBanner';
+import Categories from '@/components/Categories';
 import { Container } from '@/components/Container';
 import Hero from '@/components/Hero';
 import ProductPresetI from '@/components/presets/ProductPresetI';
@@ -22,11 +23,12 @@ const Home = () => {
   return (
     <Container>
       <Hero />
-      <ProductPresetI title="Best Deals" />
+      <Categories />
       <div className="flex items-center justify-between gap-6 my-6">
         <SwiperBanner banners={banners} />
         <SwiperBanner banners={banners} />
       </div>
+      <ProductPresetI title="Best Deals" />
     </Container>
   );
 };

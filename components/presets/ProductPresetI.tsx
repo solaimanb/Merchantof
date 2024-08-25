@@ -27,7 +27,8 @@ const products: ProductData[] = [
     name: 'Wireless Headphones',
     category: 'Electronics',
     price: '$59.99',
-    imageUrl: 'https://nextui.org/images/card-example-1.jpeg',
+    imageUrl:
+      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
     rating: 4.5,
     reviews: 120,
   },
@@ -36,7 +37,8 @@ const products: ProductData[] = [
     name: 'Smartwatch',
     category: 'Wearables',
     price: '$129.99',
-    imageUrl: 'https://nextui.org/images/card-example-2.jpeg',
+    imageUrl:
+      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
     rating: 4.8,
     reviews: 89,
   },
@@ -45,7 +47,8 @@ const products: ProductData[] = [
     name: 'Gaming Mouse',
     category: 'Accessories',
     price: '$39.99',
-    imageUrl: 'https://nextui.org/images/card-example-3.jpeg',
+    imageUrl:
+      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
     rating: 4.3,
     reviews: 150,
   },
@@ -54,7 +57,8 @@ const products: ProductData[] = [
     name: 'Bluetooth Speaker',
     category: 'Audio',
     price: '$79.99',
-    imageUrl: 'https://nextui.org/images/card-example-4.jpeg',
+    imageUrl:
+      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
     rating: 4.7,
     reviews: 75,
   },
@@ -63,7 +67,8 @@ const products: ProductData[] = [
     name: 'Bluetooth Speaker',
     category: 'Audio',
     price: '$79.99',
-    imageUrl: 'https://nextui.org/images/card-example-4.jpeg',
+    imageUrl:
+      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
     rating: 4.7,
     reviews: 75,
   },
@@ -72,7 +77,8 @@ const products: ProductData[] = [
     name: 'Bluetooth Speaker',
     category: 'Audio',
     price: '$79.99',
-    imageUrl: 'https://nextui.org/images/card-example-4.jpeg',
+    imageUrl:
+      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
     rating: 4.7,
     reviews: 75,
   },
