@@ -1,12 +1,11 @@
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Image,
-  Skeleton,
-} from '@nextui-org/react';
+'use client';
+
+import { useTheme } from '@/providers/ThemeProvider';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React from 'react';
+import { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import ProductCard from '../ui/ProductCard';
 
 interface ProductData {
   id: number;
@@ -16,6 +15,10 @@ interface ProductData {
   imageUrl: string;
   rating: number;
   reviews: number;
+}
+
+interface ProductPresetProps {
+  title: string;
 }
 
 const products: ProductData[] = [
@@ -55,55 +58,96 @@ const products: ProductData[] = [
     rating: 4.7,
     reviews: 75,
   },
+  {
+    id: 5,
+    name: 'Bluetooth Speaker',
+    category: 'Audio',
+    price: '$79.99',
+    imageUrl: 'https://nextui.org/images/card-example-4.jpeg',
+    rating: 4.7,
+    reviews: 75,
+  },
+  {
+    id: 6,
+    name: 'Bluetooth Speaker',
+    category: 'Audio',
+    price: '$79.99',
+    imageUrl: 'https://nextui.org/images/card-example-4.jpeg',
+    rating: 4.7,
+    reviews: 75,
+  },
 ];
 
-const ProductPresetI: React.FC = () => {
+const NavigationButton: React.FC<{
+  direction: 'prev' | 'next';
+  isDark: boolean;
+}> = ({ direction, isDark }) => {
+  const isPrev = direction === 'prev';
+  const positionClass = isPrev ? 'left-0 ml-1' : 'right-0 mr-1';
+  const bgColor = isDark ? 'bg-black text-white' : 'bg-white text-black';
+
   return (
-    <section className="">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold">Flash Sale</h1>
+    <button
+      className={`custom-${direction} absolute top-1/2 transform -translate-y-1/2 z-10 p-2 rounded-full shadow-lg ${positionClass} ${bgColor}`}
+      aria-label={isPrev ? 'Previous' : 'Next'}
+    >
+      {isPrev ? <ChevronLeft /> : <ChevronRight />}
+    </button>
+  );
+};
+
+const ProductPresetI: React.FC<ProductPresetProps> = ({ title }) => {
+  const { isDark } = useTheme();
+
+  return (
+    <section className="my-6">
+      <div className="mb-4">
+        <h1 className="text-2xl font-bold">{title}</h1>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {products.map((product) => (
-          <Card key={product.id} className="p-2 border rounded-lg shadow">
-            <CardHeader className="p-1 flex-col items-start">
-              <Skeleton className="rounded-lg w-full">
-                <Image
-                  alt={product.name}
-                  className="object-cover rounded-xl"
-                  src={product.imageUrl}
-                  width={400}
-                  height={250}
-                />
-              </Skeleton>
-            </CardHeader>
+      {products.length > 5 ? (
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={10}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            480: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }}
+          navigation={{
+            prevEl: '.custom-prev',
+            nextEl: '.custom-next',
+          }}
+          pagination={{ clickable: true }}
+        >
+          {products.map((product) => (
+            <SwiperSlide key={product.id}>
+              <ProductCard product={product} />
+            </SwiperSlide>
+          ))}
 
-            <CardBody className="overflow-visible p-1 mt-2 space-y-2">
-              <p className="text-xs uppercase font-bold text-orange-300">
-                {product.category}
-              </p>
-              <h4 className="font-bold text-large">{product.name}</h4>
-            </CardBody>
-
-            <CardFooter className="flex flex-col items-start p-1 space-y-2">
-              <div className="flex justify-between items-center w-full">
-                <p className="text-xl font-semibold text-orange-500">
-                  {product.price}
-                </p>
-                {/* <Button
-                  size="sm"
-                  color="primary"
-                  variant="flat"
-                  className="text-sm"
-                >
-                  Add to Cart
-                </Button> */}
-              </div>
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+          <NavigationButton direction="prev" isDark={isDark} />
+          <NavigationButton direction="next" isDark={isDark} />
+        </Swiper>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </section>
   );
 };
