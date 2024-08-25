@@ -20,9 +20,10 @@ interface ProductData {
 
 interface ProductCardProps {
   product: ProductData;
+  isPrice?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
+const ProductCard: React.FC<ProductCardProps> = ({ product, isPrice }) => (
   <Card key={product.id} className="p-2 border rounded-lg shadow">
     <CardHeader className="p-1 flex-col items-start">
       <Skeleton className="rounded-lg w-full">
@@ -43,11 +44,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => (
       <h4 className="font-bold text-large">{product.name}</h4>
     </CardBody>
 
-    <CardFooter className="flex flex-col items-start p-1 space-y-2">
-      <div className="flex justify-between items-center w-full">
-        <p className="text-xl font-semibold text-orange-500">{product.price}</p>
-      </div>
-    </CardFooter>
+    {isPrice && (
+      <CardFooter className="flex flex-col items-start p-1 space-y-2">
+        <div className="flex justify-between items-center w-full">
+          <p className="text-xl font-semibold text-orange-500">
+            {product.price}
+          </p>
+        </div>
+      </CardFooter>
+    )}
   </Card>
 );
 

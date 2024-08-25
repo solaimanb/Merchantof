@@ -36,7 +36,7 @@ const paymentMethods = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-col gap-6 bg-gray-900 text-white pt-20 pb-6">
+    <footer className="flex flex-col gap-6 bg-gray-950 text-white pt-20 pb-6">
       <Container>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           <FooterSection
