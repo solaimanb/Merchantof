@@ -48,12 +48,15 @@ const Nav = () => {
   return (
     <section
       className={`hidden lg:block w-full  ${
-        isDark ? 'bg-gray-900' : 'bg-black'
+        isDark ? 'bg-gray-300 text-black' : 'bg-black text-white'
       }`}
     >
-      <Container className="flex items-center justify-between py-4 text-white gap-4 text-sm">
+      <Container className="flex items-center justify-between py-4 gap-4 text-sm">
         <Navbar maxWidth="full" className="bg-transparent">
-          <NavbarContent className="hidden lg:flex items-center font-semibold text-sm">
+          <NavbarContent
+            justify="start"
+            className="hidden lg:flex items-center font-semibold text-sm"
+          >
             <NavbarBrand className="gap-1">
               <SlidersHorizontal size={18} />
               <p className="text-inherit">Categories</p>
@@ -99,7 +102,7 @@ const Nav = () => {
           <NavbarItem className="w-full"></NavbarItem>
         </NavbarContent> */}
 
-          <NavbarContent className="hidden lg:block">
+          <NavbarContent justify="center" className="hidden lg:block">
             <SearchBar />
           </NavbarContent>
 
@@ -115,10 +118,9 @@ const Nav = () => {
             </NavbarItem>
             <NavbarItem>
               <Button
-                // as={Link}
                 href="/"
                 variant="ghost"
-                className="flex items-center gap-1 text-nowrap font-semibold"
+                className="flex items-center gap-1 text-nowrap font-semibold border-0"
               >
                 <User size={20} />
                 Sign In
@@ -126,10 +128,9 @@ const Nav = () => {
             </NavbarItem>
             <NavbarItem>
               <Button
-                // as={Link}
                 href="/"
                 variant="ghost"
-                className="flex items-center gap-1 text-nowrap font-semibold"
+                className="flex items-center gap-1 text-nowrap font-semibold border-0"
               >
                 <ShoppingCart size={20} />
                 Cart
