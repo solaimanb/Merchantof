@@ -1,3 +1,4 @@
+import Footer from '@/components/shared/footer/Footer';
 import ClientThemeProvider from '@/providers/ClientThemeProvider';
 import { NextUIProvider } from '@nextui-org/react';
 import type { Metadata } from 'next';
@@ -25,6 +26,7 @@ export default function RootLayout({
           <NextUIProvider>
             <Header />
             <main>{children}</main>
+            <Footer />
           </NextUIProvider>
         </ClientThemeProvider>
       </body>
