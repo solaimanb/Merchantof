@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container';
-import SearchBar from '@/components/SearchBar';
+import SearchBar from '@/components/ui/SearchBar';
 import { useTheme } from '@/providers/ThemeProvider';
 import {
   Button,

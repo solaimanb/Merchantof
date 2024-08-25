@@ -2,8 +2,9 @@
 
 import { useTheme } from '@/providers/ThemeProvider';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ProductCard from '../ui/ProductCard';
 
@@ -113,7 +114,7 @@ const ProductPresetI: React.FC<ProductPresetProps> = ({ title }) => {
 
       {products.length > 5 ? (
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation]}
           spaceBetween={10}
           breakpoints={{
             320: {
@@ -136,11 +137,19 @@ const ProductPresetI: React.FC<ProductPresetProps> = ({ title }) => {
             prevEl: '.custom-prev',
             nextEl: '.custom-next',
           }}
-          pagination={{ clickable: true }}
         >
           {products.map((product) => (
             <SwiperSlide key={product.id}>
-              <ProductCard product={product} />
+              <Link
+                href={`/category/${encodeURIComponent(
+                  product.category.toLowerCase()
+                )}/${encodeURIComponent(product.name.toLowerCase())}`}
+                passHref
+              >
+                <div className="cursor-pointer">
+                  <ProductCard product={product} />
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
 
@@ -150,7 +159,15 @@ const ProductPresetI: React.FC<ProductPresetProps> = ({ title }) => {
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <Link
+              key={product.id}
+              href={`/category/${encodeURIComponent(
+                product.category.toLowerCase()
+              )}/${encodeURIComponent(product.name.toLowerCase())}`}
+              passHref
+            >
+              <ProductCard product={product} />
+            </Link>
           ))}
         </div>
       )}
