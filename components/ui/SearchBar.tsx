@@ -5,9 +5,9 @@ const SearchBar = () => {
   return (
     <div className="rounded-md bg-white pl-2 py-1 flex items-center gap-2">
       <Input
-        size="lg"
+        size="md"
         type="email"
-        className="focus:outline-none focus:ring-0 bg-white"
+        className="focus:outline-none focus:ring-0"
         placeholder="Search Products"
       />
       <Button variant="ghost" className="border-none focus:outline-none">

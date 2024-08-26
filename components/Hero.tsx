@@ -42,7 +42,7 @@ const Hero = () => {
         disableOnInteraction: false,
       }}
       modules={[Autoplay, Pagination]}
-      className="bg-gray-300 my-4"
+      className="mt-2 bg-gray-300"
     >
       {slidesData.map((slide) => (
         <SwiperSlide
