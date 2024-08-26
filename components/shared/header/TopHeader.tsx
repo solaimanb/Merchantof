@@ -1,77 +1,47 @@
 import { Container } from '@/components/Container';
-import { Button, Navbar, NavbarContent, NavbarItem } from '@nextui-org/react';
-import {
-  Facebook,
-  Instagram,
-  Menu,
-  MessageCircleIcon,
-  ShoppingCart,
-  User,
-} from 'lucide-react';
+import { Navbar, NavbarContent } from '@nextui-org/react';
+import { Facebook, Instagram, MessageCircleIcon } from 'lucide-react';
 import Link from 'next/link';
+
+const navItems = [
+  { name: 'Contact us', href: '/contact' },
+  { name: 'Help & Support', href: '/support' },
+];
 
 const TopHeader = () => {
   return (
-    <Container className="flex items-center justify-between gap-4">
-      <Navbar maxWidth="full" className="bg-transparent">
-        <NavbarContent className="lg:hidden w-fit" justify="start">
-          {/* <NavbarMenuToggle /> */}
-          <Menu />
-        </NavbarContent>
-
-        <NavbarContent>
-          <Link href="/" className="font-bold text-2xl">
-            MerchantOF
-          </Link>
-        </NavbarContent>
-
+    <Container className="hidden lg:flex items-center justify-between gap-4">
+      <Navbar maxWidth="full" className="bg-transparent" height="2.5rem">
         <NavbarContent
-          justify="end"
+          justify="start"
           className="hidden lg:flex items-center gap-4 lg:gap-20"
         >
-          <nav className="text-sm">
+          <nav className="text-xs">
             <ul className="flex items-center gap-6">
-              <li className="text-nowrap">Contact us</li>
-              <li className="text-nowrap">Help & Support</li>
+              {navItems.map((item) => (
+                <li
+                  key={item.name}
+                  className="text-nowrap opacity-80 hover:opacity-100"
+                >
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
-
-          <div className="flex items-center gap-2">
-            <Link href="/">
-              <Instagram size={18} />
-            </Link>
-            <Link href="/">
-              <Facebook size={18} />
-            </Link>
-            <Link href="/">
-              <MessageCircleIcon size={18} />
-            </Link>
-          </div>
         </NavbarContent>
 
-        <NavbarContent justify="end" className="flex lg:hidden items-center">
-          <NavbarItem>
-            <Button
-              href="/"
-              isIconOnly
-              variant="ghost"
-              size="sm"
-              className="border-0"
-            >
-              <User size={20} />
-            </Button>
-          </NavbarItem>
-          <NavbarItem>
-            <Button
-              href="/"
-              isIconOnly
-              variant="ghost"
-              size="sm"
-              className="border-0"
-            >
-              <ShoppingCart size={20} />
-            </Button>
-          </NavbarItem>
+        <NavbarContent justify="end" className="hidden lg:block">
+          <div className="flex items-center h-full justify-end gap-2">
+            <Link href="/">
+              <Instagram size={16} />
+            </Link>
+            <Link href="/">
+              <Facebook size={16} />
+            </Link>
+            <Link href="/">
+              <MessageCircleIcon size={16} />
+            </Link>
+          </div>
         </NavbarContent>
       </Navbar>
     </Container>

@@ -1,5 +1,4 @@
 import { Container } from '@/components/Container';
-import { Divider } from '@nextui-org/react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -17,19 +16,18 @@ const BottomHeader = () => {
 
   return (
     <Container>
-      <div className="my-6 hidden lg:block">
+      <div className="hidden lg:block">
         <nav>
-          <ul className="flex items-center justify-between gap-4 text-sm">
+          <ul className="flex items-center justify-between text-sm">
             {categories.map((category, index) => (
               <React.Fragment key={index}>
-                <li className="relative flex items-center">
-                  <Link href={category.url}>{category.name}</Link>
-                  {index < categories.length - 1 && (
-                    <Divider
-                      orientation="vertical"
-                      className="h-full w-2 border-gray-400 ml-4"
-                    />
-                  )}
+                <li className="relative flex items-center justify-center w-full">
+                  <Link
+                    href={category.url}
+                    className="py-4 text-center w-full hover:bg-slate-100 hover:text-black transition-transform duration-300 ease-in-out"
+                  >
+                    {category.name}
+                  </Link>
                 </li>
               </React.Fragment>
             ))}

@@ -5,7 +5,6 @@ import Hero from '@/components/Hero';
 import ProductPresetI from '@/components/presets/ProductPresetI';
 import ProductPresetII from '@/components/presets/ProductPresetII';
 import BottomHeader from '@/components/shared/header/BottomHeader';
-import UsersList from '@/components/UsersList';
 
 const banners = [
   {
@@ -27,7 +26,6 @@ const Home = () => {
     <Container>
       <BottomHeader />
       <Hero />
-      <UsersList />
       <Categories />
       <div className="flex items-center justify-between gap-6 my-6">
         <SwiperBanner banners={banners} />

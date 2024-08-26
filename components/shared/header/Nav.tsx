@@ -2,7 +2,6 @@ import { Container } from '@/components/Container';
 import SearchBar from '@/components/ui/SearchBar';
 import { useTheme } from '@/providers/ThemeProvider';
 import {
-  Button,
   Link,
   Navbar,
   NavbarBrand,
@@ -12,13 +11,8 @@ import {
   NavbarMenuItem,
   Switch,
 } from '@nextui-org/react';
-import {
-  MoonIcon,
-  ShoppingCart,
-  SlidersHorizontal,
-  SunIcon,
-  User,
-} from 'lucide-react';
+import { Menu, MoonIcon, ShoppingCart, SunIcon, User } from 'lucide-react';
+import Image from 'next/image';
 import { useState } from 'react';
 
 import 'swiper/css';
@@ -46,68 +40,35 @@ const Nav = () => {
   };
 
   return (
-    <section
-      className={`hidden lg:block w-full  ${
-        isDark ? 'bg-gray-300 text-black' : 'bg-black text-white'
-      }`}
-    >
-      <Container className="flex items-center justify-between py-4 gap-4 text-sm">
+    <section className="w-full bg-black text-white">
+      <Container className="flex items-center justify-between py-3 gap-4 text-sm">
         <Navbar maxWidth="full" className="bg-transparent">
-          <NavbarContent
-            justify="start"
-            className="hidden lg:flex items-center font-semibold text-sm"
-          >
-            <NavbarBrand className="gap-1">
-              <SlidersHorizontal size={18} />
-              <p className="text-inherit">Categories</p>
+          <NavbarContent justify="start">
+            <NavbarItem className="lg:hidden w-fit">
+              <Menu />
+            </NavbarItem>
+            <NavbarBrand className="flex items-center gap-2">
+              <Image
+                src={'/merchantof.png'}
+                alt=""
+                width={40}
+                height={40}
+                className="hidden lg:block"
+              />
+              <Link href="/" className="font-bold text-2xl text-white">
+                MerchantOF
+              </Link>
             </NavbarBrand>
-
-            {/* <Dropdown>
-            <DropdownTrigger className="flex items-center text-xs w-fit px-1 rounded-sm">
-              <Button variant="bordered">
-                {currency}
-                <ChevronDown size={18} />
-              </Button>
-            </DropdownTrigger>
-
-            <DropdownMenu
-              aria-label="Currency Selector"
-              className="flex flex-col border bg-white shadow-md px-2 cursor-pointer rounded-sm text-sm"
-            >
-              <DropdownItem
-                key="usd"
-                onClick={() => handleCurrencyChange('USD')}
-                className="border-b"
-              >
-                USD
-              </DropdownItem>
-              <DropdownItem
-                key="inr"
-                onClick={() => handleCurrencyChange('INR')}
-                className="border-b"
-              >
-                INR
-              </DropdownItem>
-              <DropdownItem
-                key="eur"
-                onClick={() => handleCurrencyChange('EUR')}
-              >
-                EUR
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown> */}
           </NavbarContent>
 
-          {/* <NavbarContent className="w-1/2 hidden lg:flex gap-4 " justify="center">
-          <NavbarItem className="w-full"></NavbarItem>
-        </NavbarContent> */}
-
-          <NavbarContent justify="center" className="hidden lg:block">
-            <SearchBar />
+          <NavbarContent className="hidden lg:flex">
+            <NavbarItem>
+              <SearchBar />
+            </NavbarItem>
           </NavbarContent>
 
           <NavbarContent justify="end" className="flex items-center">
-            <NavbarItem>
+            <NavbarItem className="hidden lg:block">
               <Switch
                 size="sm"
                 onChange={toggleTheme}
@@ -116,25 +77,22 @@ const Nav = () => {
                 endContent={<MoonIcon />}
               />
             </NavbarItem>
-            <NavbarItem>
-              <Button
+
+            <NavbarItem className="flex flex-row items-center gap-6">
+              <Link
                 href="/"
-                variant="ghost"
                 className="flex items-center gap-1 text-nowrap font-semibold border-0"
               >
                 <User size={20} />
-                Sign In
-              </Button>
-            </NavbarItem>
-            <NavbarItem>
-              <Button
+                <span className="hidden lg:block">Sign In</span>
+              </Link>
+              <Link
                 href="/"
-                variant="ghost"
                 className="flex items-center gap-1 text-nowrap font-semibold border-0"
               >
                 <ShoppingCart size={20} />
-                Cart
-              </Button>
+                <span className="hidden lg:block">Cart</span>
+              </Link>
             </NavbarItem>
           </NavbarContent>
 

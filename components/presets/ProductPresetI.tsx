@@ -29,7 +29,7 @@ const products: ProductData[] = [
     category: 'Electronics',
     price: '$59.99',
     imageUrl:
-      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
+      'https://c1.neweggimages.com/ProductImage/B7S8S2210040JPJXZD5.jpg',
     rating: 4.5,
     reviews: 120,
   },
@@ -38,8 +38,7 @@ const products: ProductData[] = [
     name: 'Smartwatch',
     category: 'Wearables',
     price: '$129.99',
-    imageUrl:
-      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/11-854-133-01.jpg',
     rating: 4.8,
     reviews: 89,
   },
@@ -48,8 +47,7 @@ const products: ProductData[] = [
     name: 'Gaming Mouse',
     category: 'Accessories',
     price: '$39.99',
-    imageUrl:
-      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/68-105-274-V01.jpg',
     rating: 4.3,
     reviews: 150,
   },
@@ -58,8 +56,7 @@ const products: ProductData[] = [
     name: 'Bluetooth Speaker',
     category: 'Audio',
     price: '$79.99',
-    imageUrl:
-      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/19-113-845-01.jpg',
     rating: 4.7,
     reviews: 75,
   },
@@ -69,7 +66,7 @@ const products: ProductData[] = [
     category: 'Audio',
     price: '$79.99',
     imageUrl:
-      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
+      'https://c1.neweggimages.com/ProductImageCompressAll1280/74-103-752-05.jpg',
     rating: 4.7,
     reviews: 75,
   },
@@ -78,8 +75,7 @@ const products: ProductData[] = [
     name: 'Bluetooth Speaker',
     category: 'Audio',
     price: '$79.99',
-    imageUrl:
-      'https://c1.neweggimages.com/productimage/nb300/13-162-131-04.png',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/26-627-147-02.png',
     rating: 4.7,
     reviews: 75,
   },

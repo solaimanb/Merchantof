@@ -9,7 +9,7 @@ const ThemedComponent: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
       className={`${
-        isDark ? 'bg-black text-white' : 'bg-white text-black'
+        isDark ? 'bg-gray-950 text-white' : 'bg-white text-black'
       } transition duration-300 ease-in-out`}
     >
       {children}

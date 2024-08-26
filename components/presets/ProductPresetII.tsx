@@ -18,133 +18,143 @@ interface ProductData {
 const products: ProductData[] = [
   {
     id: 1,
-    name: 'Product 1',
-    category: 'Category 1',
+    name: 'Eco-Friendly Water Bottle',
+    category: 'Outdoor Gear',
     price: '$20.00',
-    imageUrl: '/path/to/image1.jpg',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/23-201-133-01.jpg',
     rating: 4.5,
     reviews: 10,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/eco-friendly-water-bottle',
   },
   {
     id: 2,
-    name: 'Product 2',
-    category: 'Category 2',
+    name: 'Compact Digital Camera',
+    category: 'Photography',
     price: '$35.00',
-    imageUrl: '/path/to/image2.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImage/A4RE_131715372370514432JcnRuJwIIS.jpg',
     rating: 4.0,
     reviews: 8,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/compact-digital-camera',
   },
   {
     id: 3,
-    name: 'Product 3',
-    category: 'Category 3',
+    name: 'Wireless Charging Pad',
+    category: 'Accessories',
     price: '$50.00',
-    imageUrl: '/path/to/image3.jpg',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/A1DSS211101fi4Yp.jpg',
     rating: 5.0,
     reviews: 12,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/wireless-charging-pad',
   },
   {
     id: 4,
-    name: 'Product 4',
-    category: 'Category 4',
+    name: 'Bluetooth Headphones',
+    category: 'Audio',
     price: '$25.00',
-    imageUrl: '/path/to/image4.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImage/BK19D23031518RL8O70.jpg',
     rating: 3.5,
     reviews: 6,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/bluetooth-headphones',
   },
   {
     id: 5,
-    name: 'Product 5',
-    category: 'Category 5',
+    name: 'Smart Home Thermostat',
+    category: 'Home Automation',
     price: '$15.00',
-    imageUrl: '/path/to/image5.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImageCompressAll1280/BRYRS2405100H7XGH11.jpg',
     rating: 4.2,
     reviews: 9,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/smart-home-thermostat',
   },
   {
     id: 6,
-    name: 'Product 6',
-    category: 'Category 6',
+    name: '4K Ultra HD Monitor',
+    category: 'Computers',
     price: '$45.00',
-    imageUrl: '/path/to/image6.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImage/A0ZXD23111804V09M7A.jpg',
     rating: 4.8,
     reviews: 15,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/4k-ultra-hd-monitor',
   },
   {
     id: 7,
-    name: 'Product 7',
-    category: 'Category 7',
+    name: 'Ergonomic Office Chair',
+    category: 'Furniture',
     price: '$30.00',
-    imageUrl: '/path/to/image7.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImage/AZUES2406250GIO9Z1F.jpg',
     rating: 4.1,
     reviews: 7,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/ergonomic-office-chair',
   },
   {
     id: 8,
-    name: 'Product 8',
-    category: 'Category 8',
+    name: 'Smartwatch Series 6',
+    category: 'Wearables',
     price: '$22.00',
-    imageUrl: '/path/to/image8.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImageCompressAll1280/14P-006A-00028-S04.jpg',
     rating: 4.7,
     reviews: 11,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/smartwatch-series-6',
   },
   {
     id: 9,
-    name: 'Product 9',
-    category: 'Category 9',
+    name: 'High-Speed External SSD',
+    category: 'Storage',
     price: '$40.00',
-    imageUrl: '/path/to/image9.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImage/BSK6S24060504PP9N1A.jpg',
     rating: 4.3,
     reviews: 14,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/high-speed-external-ssd',
   },
   {
     id: 10,
-    name: 'Product 10',
-    category: 'Category 10',
+    name: 'Portable Air Purifier',
+    category: 'Home Appliances',
     price: '$55.00',
-    imageUrl: '/path/to/image10.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImageCompressAll1280/AGDFS2302150OCCYH91.jpg',
     rating: 4.9,
     reviews: 16,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/portable-air-purifier',
   },
   {
     id: 11,
-    name: 'Product 11',
-    category: 'Category 11',
+    name: 'Digital Kitchen Scale',
+    category: 'Kitchen Appliances',
     price: '$60.00',
-    imageUrl: '/path/to/image11.jpg',
+    imageUrl: 'https://c1.neweggimages.com/ProductImage/1A7-0019-00031-01.jpg',
     rating: 5.0,
     reviews: 18,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/digital-kitchen-scale',
   },
   {
     id: 12,
-    name: 'Product 12',
-    category: 'Category 12',
+    name: 'Fitness Tracker Band',
+    category: 'Health & Fitness',
     price: '$18.00',
-    imageUrl: '/path/to/image12.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImageCompressAll1280/0XM-00JK-00075-S01.jpg',
     rating: 3.8,
     reviews: 5,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/fitness-tracker-band',
   },
   {
     id: 13,
-    name: 'Product 13',
-    category: 'Category 13',
+    name: 'Smart Doorbell Camera',
+    category: 'Smart Home',
     price: '$48.00',
-    imageUrl: '/path/to/image13.jpg',
+    imageUrl:
+      'https://c1.neweggimages.com/ProductImage/A1DSS2304070HU20T64.jpg',
     rating: 4.6,
     reviews: 13,
-    url: 'https://somewhere.com',
+    url: 'https://example.com/product/smart-doorbell-camera',
   },
 ];
 
@@ -156,7 +166,7 @@ const ProductPresetII: React.FC<ProductPresetProps> = ({ title }) => {
   const [visibleProducts, setVisibleProducts] = useState<ProductData[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const itemsPerPage = 6;
+  const itemsPerPage = 10;
 
   useEffect(() => {
     const loadMoreProducts = () => {
@@ -178,7 +188,7 @@ const ProductPresetII: React.FC<ProductPresetProps> = ({ title }) => {
         <h1 className="text-2xl font-bold">{title}</h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2">
         {visibleProducts.map((product) => (
           <ProductCard key={product.id} product={product} isPrice />
         ))}

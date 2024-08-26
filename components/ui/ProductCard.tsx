@@ -23,37 +23,38 @@ interface ProductCardProps {
   isPrice?: boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, isPrice }) => (
-  <Card key={product.id} className="p-2 border rounded-lg shadow">
-    <CardHeader className="p-1 flex-col items-start">
-      <Skeleton className="rounded-lg w-full">
+const ProductCard: React.FC<ProductCardProps> = ({ product, isPrice }) => {
+  return (
+    <Card key={product.id} className="p-2 rounded shadow border">
+      <CardHeader className="flex-col items-center w-full">
+        {!product.imageUrl && <Skeleton className="w-full h-full" />}
         <Image
           alt={product.name}
-          className="object-cover rounded-xl"
+          className={`w-full object-cover rounded ${
+            !product.imageUrl ? 'hidden' : ''
+          }`}
           src={product.imageUrl}
           width={400}
-          height={250}
+          height={150}
         />
-      </Skeleton>
-    </CardHeader>
+      </CardHeader>
 
-    <CardBody className="overflow-visible p-1 mt-2 space-y-2">
-      <p className="text-xs uppercase font-bold text-orange-300">
-        {product.category}
-      </p>
-      <h4 className="font-bold text-large">{product.name}</h4>
-    </CardBody>
+      <CardBody className="overflow-visible p-1 mt-2 space-y-2">
+        <p className="text-xs uppercase font-bold text-orange-300">
+          {product.category}
+        </p>
+        <h4 className="font-semibold">{product.name}</h4>
+      </CardBody>
 
-    {isPrice && (
-      <CardFooter className="flex flex-col items-start p-1 space-y-2">
-        <div className="flex justify-between items-center w-full">
-          <p className="text-xl font-semibold text-orange-500">
-            {product.price}
-          </p>
-        </div>
-      </CardFooter>
-    )}
-  </Card>
-);
+      {isPrice && (
+        <CardFooter className="flex flex-col items-start p-1 space-y-2">
+          <div className="flex justify-between items-center w-full">
+            <p className="text-xl font-semibold">{product.price}</p>
+          </div>
+        </CardFooter>
+      )}
+    </Card>
+  );
+};
 
 export default ProductCard;
