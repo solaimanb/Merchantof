@@ -11,12 +11,8 @@ import {
   NavbarMenuItem,
   Switch,
 } from '@nextui-org/react';
-<<<<<<< HEAD
 import { Menu, MoonIcon, ShoppingCart, SunIcon, User } from 'lucide-react';
 import Image from 'next/image';
-=======
-import { MoonIcon, ShoppingCart, SunIcon, User } from 'lucide-react';
->>>>>>> f6563ac (re-initilize the repo)
 import { useState } from 'react';
 
 import 'swiper/css';
@@ -47,7 +43,6 @@ const Nav = () => {
     <section className="w-full bg-black text-white">
       <Container className="flex items-center justify-between py-3 gap-4 text-sm">
         <Navbar maxWidth="full" className="bg-transparent">
-<<<<<<< HEAD
           <NavbarContent justify="start">
             <NavbarItem className="lg:hidden w-fit">
               <Menu />
@@ -60,13 +55,6 @@ const Nav = () => {
                 height={40}
                 className="hidden lg:block"
               />
-=======
-          <NavbarContent
-            justify="start"
-            className="hidden lg:flex items-center font-semibold text-sm"
-          >
-            <NavbarBrand>
->>>>>>> f6563ac (re-initilize the repo)
               <Link href="/" className="font-bold text-2xl text-white">
                 MerchantOF
               </Link>
