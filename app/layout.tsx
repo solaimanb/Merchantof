@@ -25,7 +25,7 @@ export default function RootLayout({
         <ClientThemeProvider>
           <NextUIProvider>
             <Header />
-            <main>{children}</main>
+            <main className='min-h-screen'>{children}</main>
             <Footer />
           </NextUIProvider>
         </ClientThemeProvider>

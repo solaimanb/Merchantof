@@ -71,6 +71,7 @@ const Nav = () => {
             <NavbarItem className="hidden lg:block">
               <Switch
                 size="sm"
+                isSelected={isDark}
                 onChange={toggleTheme}
                 aria-label="Toggle theme"
                 startContent={<SunIcon />}
