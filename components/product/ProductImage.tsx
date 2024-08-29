@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
 
 interface ProductImageProps {
   images: string[];
@@ -18,7 +18,7 @@ const ProductImage: React.FC<ProductImageProps> = ({ images }) => {
           alt="Product Image"
           width={800}
           height={800}
-          className="w-full h-auto object-cover"
+          objectFit="cover"
         />
       </div>
 
@@ -27,7 +27,7 @@ const ProductImage: React.FC<ProductImageProps> = ({ images }) => {
           <div
             key={index}
             className={`flex-shrink-0 cursor-pointer border rounded-md overflow-hidden ${
-              image === mainImage ? 'border' : 'border-transparent'
+              image === mainImage ? "border" : "border-transparent"
             }`}
             onClick={() => setMainImage(image)}
           >
@@ -36,7 +36,7 @@ const ProductImage: React.FC<ProductImageProps> = ({ images }) => {
               alt={`Thumbnail ${index + 1}`}
               width={100}
               height={100}
-              className="object-cover"
+              objectFit="cover"
             />
           </div>
         ))}
